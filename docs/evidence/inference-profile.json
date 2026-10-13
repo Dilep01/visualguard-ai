@@ -1,0 +1,23 @@
+{
+  "split": "train",
+  "images": 198,
+  "pairs": 336,
+  "coefficients": {
+    "dx": -0.009661435872666449,
+    "dy": -0.014974781581765025,
+    "log_w": 0.011766274612806583,
+    "log_h": -0.06723563332809102
+  },
+  "weights_sha256": "ae41881cf271f5d9a335b95fbb4b050eb19c51faaff3f2375dd2c6a8ad00074f",
+  "split_manifest_sha256": "f64f4da4db584bca3ec1a5bcc270461199c25a73f7c2e26d76f1cef55a39478a",
+  "imgsz": 320,
+  "fit_prediction_confidence": 0.1,
+  "fit_min_iou": 0.1,
+  "method": "Median normalized center and log-size residuals from training pairs",
+  "scope": "Box geometry only; does not calibrate confidence probabilities.",
+  "head_confidence": 0.25,
+  "merge_iou": 0.5,
+  "rect": false,
+  "fit_report_sha256": "47a549d486405f59d8b03ea96e96b13a90447b6d72acdb940d2355d3ceea9181",
+  "postprocess": "Training-fitted head box residuals, then confidence-weighted duplicate geometry fusion. Confidence is not increased."
+}

@@ -1,0 +1,91 @@
+{
+  "split": "val",
+  "images": 216,
+  "fixed_operating_point": {
+    "confidence": 0.4,
+    "head_confidence": 0.25,
+    "iou": 0.5,
+    "per_class": {
+      "person": {
+        "tp": 256,
+        "fp": 74,
+        "fn": 40,
+        "precision": 0.7757575757575758,
+        "recall": 0.8648648648648649
+      },
+      "head": {
+        "tp": 21,
+        "fp": 7,
+        "fn": 47,
+        "precision": 0.75,
+        "recall": 0.3088235294117647
+      },
+      "helmet": {
+        "tp": 185,
+        "fp": 13,
+        "fn": 55,
+        "precision": 0.9343434343434344,
+        "recall": 0.7708333333333334
+      },
+      "vest": {
+        "tp": 179,
+        "fp": 22,
+        "fn": 54,
+        "precision": 0.8905472636815921,
+        "recall": 0.7682403433476395
+      }
+    }
+  },
+  "weights_sha256": "ae41881cf271f5d9a335b95fbb4b050eb19c51faaff3f2375dd2c6a8ad00074f",
+  "dataset_config_sha256": "1a195479e28b6bd6b281c4f0b6609c7e8ab26916de265ceda19e39c3603514de",
+  "split_manifest_sha256": "f64f4da4db584bca3ec1a5bcc270461199c25a73f7c2e26d76f1cef55a39478a",
+  "ultralytics_version": "8.4.174",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "device": "cpu",
+  "imgsz": 320,
+  "scope": "Actual application detector, validation only. Head boxes adjusted and fused. AP was not recomputed for postprocessed boxes; raw detector AP is separately labeled.",
+  "raw_detector_metrics": {
+    "metrics/precision(B)": 0.6829120405066551,
+    "metrics/recall(B)": 0.7027766388117984,
+    "metrics/mAP50(B)": 0.7446008659699759,
+    "metrics/mAP50-95(B)": 0.4180903643862977,
+    "fitness": 0.4180903643862977
+  },
+  "raw_detector_per_class": [
+    {
+      "class": "person",
+      "precision_at_best_f1": 0.6584988184445799,
+      "recall_at_best_f1": 0.9054054054054054,
+      "mAP50": 0.852056773621582,
+      "mAP50_95": 0.5258065898658375
+    },
+    {
+      "class": "head",
+      "precision_at_best_f1": 0.5031293164359396,
+      "recall_at_best_f1": 0.27941176470588236,
+      "mAP50": 0.4271839583088508,
+      "mAP50_95": 0.13317903894125513
+    },
+    {
+      "class": "helmet",
+      "precision_at_best_f1": 0.8147124096694027,
+      "recall_at_best_f1": 0.7916666666666666,
+      "mAP50": 0.8244178276448383,
+      "mAP50_95": 0.4447438656595352
+    },
+    {
+      "class": "vest",
+      "precision_at_best_f1": 0.7553076174766984,
+      "recall_at_best_f1": 0.8346227184692394,
+      "mAP50": 0.8747449043046323,
+      "mAP50_95": 0.5686319630785628
+    }
+  ],
+  "metrics": {
+    "metrics/mAP50(B)": null,
+    "metrics/mAP50-95(B)": null
+  },
+  "head_profile": "reports/training/head-adjustment-v3/inference_profile.json",
+  "head_profile_sha256": "4d9c7c30c156e103a947b3f23da4ed8006d2d936fde9c0c848ba32f0d781d74e",
+  "rect": false
+}

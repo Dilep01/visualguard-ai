@@ -1,0 +1,12 @@
+# Candidate-stage verification — 11 October 2026
+
+- V2 completed its planned 12 epochs. Six saved epochs were recovered after interruption; the remaining six completed in a resumed segment of 1,080.57 seconds, including setup/final validation. Pre-resume checkpoints, arguments, and CSV are retained under the training run. Historical elapsed time includes interruption and is not continuous training time.
+- Both v1 and v2 were evaluated on all 216 validation images at input 416 and confidence 0.40. V2's head result is TP 0 / FP 0 / FN 68. It failed the predeclared precision/recall gates. V1 remains active at input 320 and confidence 0.40. The test partition was not re-evaluated.
+- The registered candidate hash is `5baebc034be5c764cd62414e39b7d337bf21afd990692358d3c3c97eb589e545`. Registration recomputed the gates, checked the hash and preserved the prior model report/configuration. Candidate results appear in the dashboard without changing the active checkpoint.
+- **52 automated tests passed**, 12.29 seconds. Coverage: 850/938 application statements, 90.62%. New checks cover validation-only comparisons, mismatched dataset/configuration rejection, the exact five-percentage-point boundary, settings/report mismatch, rejected-candidate retention, checkpoint-hash rejection, and rollback preservation. Test fixtures do not establish model accuracy.
+- Ruff lint and formatting passed for 53 Python files. One existing Starlette TestClient deprecation warning remains.
+- Browser check passed on all four pages: synthetic video loaded, review persisted, real image upload completed, evaluation split was shown correctly, and the candidate comparison was visible. Zero browser page errors. Evidence: `reports/browser-check.json`; browser job `292990b4ffaa4d4597e95702bc12727c` is synthetic and explicitly labeled.
+- Label geometry and candidate error-review sheets were visually inspected. Source labels were not changed. The flagged examples include partial person/head containment and non-workplace scenes; flags alone are not proof of annotation errors.
+- All created/changed files, checkpoints, caches, backups, logs, and browser artifacts for this continuation are inside the project. No cloud training, publishing, external image upload, or Docker execution was performed.
+
+The application workflow works. Missing-helmet detection remains unresolved. Image validation scores do not establish video-event accuracy or independent workplace performance.

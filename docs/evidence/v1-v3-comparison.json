@@ -1,0 +1,107 @@
+{
+  "split": "val",
+  "images": 216,
+  "imgsz": 320,
+  "confidence": 0.4,
+  "head_confidence": 0.25,
+  "iou": 0.5,
+  "baseline_sha256": "bd931ce4357b3649f6e3d4efc590b4f7f997c07d9b6b67454367d892936393ea",
+  "candidate_sha256": "ae41881cf271f5d9a335b95fbb4b050eb19c51faaff3f2375dd2c6a8ad00074f",
+  "baseline_per_class": {
+    "person": {
+      "tp": 244,
+      "fp": 41,
+      "fn": 52,
+      "precision": 0.856140350877193,
+      "recall": 0.8243243243243243
+    },
+    "head": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 67,
+      "precision": 1.0,
+      "recall": 0.014705882352941176
+    },
+    "helmet": {
+      "tp": 171,
+      "fp": 11,
+      "fn": 69,
+      "precision": 0.9395604395604396,
+      "recall": 0.7125
+    },
+    "vest": {
+      "tp": 163,
+      "fp": 15,
+      "fn": 70,
+      "precision": 0.9157303370786517,
+      "recall": 0.6995708154506438
+    }
+  },
+  "candidate_per_class": {
+    "person": {
+      "tp": 256,
+      "fp": 74,
+      "fn": 40,
+      "precision": 0.7757575757575758,
+      "recall": 0.8648648648648649
+    },
+    "head": {
+      "tp": 21,
+      "fp": 7,
+      "fn": 47,
+      "precision": 0.75,
+      "recall": 0.3088235294117647
+    },
+    "helmet": {
+      "tp": 185,
+      "fp": 13,
+      "fn": 55,
+      "precision": 0.9343434343434344,
+      "recall": 0.7708333333333334
+    },
+    "vest": {
+      "tp": 179,
+      "fp": 22,
+      "fn": 54,
+      "precision": 0.8905472636815921,
+      "recall": 0.7682403433476395
+    }
+  },
+  "gates": [
+    {
+      "criterion": "head_precision",
+      "minimum": 0.7,
+      "actual": 0.75,
+      "passed": true
+    },
+    {
+      "criterion": "head_recall",
+      "minimum": 0.3,
+      "actual": 0.3088235294117647,
+      "passed": true
+    },
+    {
+      "criterion": "person_recall_change",
+      "minimum": -0.05,
+      "actual": 0.04054054054054057,
+      "passed": true
+    },
+    {
+      "criterion": "helmet_recall_change",
+      "minimum": -0.05,
+      "actual": 0.05833333333333335,
+      "passed": true
+    },
+    {
+      "criterion": "vest_recall_change",
+      "minimum": -0.05,
+      "actual": 0.06866952789699565,
+      "passed": true
+    }
+  ],
+  "eligible_for_experimental_use": true,
+  "safety_validated": false,
+  "scope": "Development selection only. Independent scene and video testing still required.",
+  "baseline_report": "reports/evaluation/construction-ppe-v1-validation-head025/detection_metrics.json",
+  "candidate_report": "reports/evaluation/construction-ppe-v3-profile-validation/detection_metrics.json"
+}

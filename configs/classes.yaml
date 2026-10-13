@@ -1,0 +1,6 @@
+# Canonical order used by dataset preparation and the detector adapter.
+names:
+  0: person
+  1: head
+  2: helmet
+  3: vest

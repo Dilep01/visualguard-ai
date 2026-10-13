@@ -1,0 +1,14 @@
+# Reference defaults. Runtime configuration uses VG_* environment variables / .env.
+confidence: 0.40
+sample_fps: 4
+min_evidence_frames: 3
+min_evidence_seconds: 0.5
+max_gap_seconds: 0.75
+tracking:
+  method: greedy_iou
+  minimum_iou: 0.25
+  expire_seconds: 0.75
+association:
+  minimum_equipment_containment: 0.8
+  ambiguity: unknown
+  vest_absence: unknown

@@ -1,0 +1,44 @@
+# Local-only deployment. The database itself supplies the durable job queue.
+x-app: &app
+  build:
+    context: .
+    dockerfile: docker/app.Dockerfile
+  environment: &environment
+    VG_DATABASE_URL: postgresql+psycopg://visualguard:local-demo-only@db:5432/visualguard
+    VG_BACKEND: ${VG_BACKEND:-demo}
+    VG_WEIGHTS: models/ppe.pt
+  volumes:
+    - ./runtime:/app/runtime
+    - ./models:/app/models:ro
+    - ./.cache/docker:/app/.cache
+  depends_on:
+    db:
+      condition: service_healthy
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: visualguard
+      POSTGRES_PASSWORD: local-demo-only
+      POSTGRES_DB: visualguard
+    volumes:
+      - ./runtime/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U visualguard"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  api:
+    <<: *app
+    ports: ["127.0.0.1:8000:8000"]
+  worker:
+    <<: *app
+    command: ["python", "-m", "visualguard.worker.main"]
+  dashboard:
+    <<: *app
+    environment:
+      <<: *environment
+      VG_API_URL: http://api:8000
+    command: ["python", "scripts/dashboard.py", "--server.address", "0.0.0.0"]
+    ports: ["127.0.0.1:8501:8501"]
