@@ -7,6 +7,8 @@ Workplace PPE observations from images and recorded video, with person tracking,
 
 This repository includes the application, synthetic workflow demo, training/evaluation scripts, and tests. Dataset files and trained weights are not distributed. A fresh clone can run the synthetic demo; real uploads require a compatible local checkpoint. Selected measured results are included in [docs/evidence](docs/evidence/README.md).
 
+To study or present the work, read the [complete project understanding guide](docs/PROJECT_UNDERSTANDING.md) and the [85 project and skills interview questions with answers](docs/PROJECT_INTERVIEW_QA.md).
+
 ![Model evaluation dashboard](docs/evidence/dashboard-model.png)
 
 The earlier v1 checkpoint was evaluated on 211 reserved images: overall mAP50 was 66.39%, with uncovered-head recall 0/58 at confidence 0.4. These are historical v1 results, not scores for the current model. The synthetic demo remains separate from model results. See [the baseline report](docs/baseline_report.md).
